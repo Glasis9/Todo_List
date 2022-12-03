@@ -65,14 +65,3 @@ def toggle_status_task(request, pk):
     else:
         task.update(status=False)
     return HttpResponseRedirect(reverse_lazy("to_do:task-list"))
-
-
-# def toggle_assign_to_car(request, pk):
-#     driver = Driver.objects.get(id=request.user.id)
-#     if (
-#         Car.objects.get(id=pk) in driver.cars.all()
-#     ):  # probably could check if car exists
-#         driver.cars.remove(pk)
-#     else:
-#         driver.cars.add(pk)
-#     return HttpResponseRedirect(reverse_lazy("taxi:car-detail", args=[pk]))
