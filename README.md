@@ -36,5 +36,5 @@ cd todo_list
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-python manage.py runserver  # starts Django Sever
+python manage.py runserver
 ```
