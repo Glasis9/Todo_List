@@ -60,8 +60,5 @@ class TaskDeleteView(generic.DeleteView):
 
 def toggle_status_task(request, pk):
     task = Task.objects.filter(id=pk)
-    if not Task.objects.get(id=pk).status:
-        task.update(status=True)
-    else:
-        task.update(status=False)
+    task.update(status=True) if not Task.objects.get(id=pk).status else task.update(status=False)
     return HttpResponseRedirect(reverse_lazy("to_do:task-list"))

@@ -8,5 +8,7 @@
     <form action="" method="POST">
         {% csrf_token %}
         <input type="submit" value="Yes, delete" class="btn btn-danger"/>
+
+        <a class="btn btn-primary" href="{% url 'to_do:tag-list' %}"> Cancel</a>
     </form>
 {% endblock %}
